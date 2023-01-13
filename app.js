@@ -51,6 +51,7 @@ app.get("/players/", async (request, response) => {
 
 app.post("/players/", async (request, response) => {
   const playerDetails = request.body;
+  console.log(playerDetails);
   const { playerName, jerseyNumber, role } = playerDetails;
   const addPlayerQuery = `
     INSERT INTO
@@ -68,5 +69,3 @@ app.post("/players/", async (request, response) => {
   console.log(playerId);
   response.send({ playerId: playerId });
 });
-
-module.exports = app;
